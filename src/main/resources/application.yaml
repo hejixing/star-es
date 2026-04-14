@@ -1,0 +1,29 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8080
+  servlet:
+    # 应用的访问路径
+    context-path: /star
+
+#elasticsearch配置
+spring:
+  elasticsearch:
+    rest:
+      # ES的REST接口地址（默认端口9200），集群可配置多个：http://node1:9200,http://node2:9200
+      uris: http://localhost:9200
+      # 若ES开启了账号密码认证，添加以下配置
+      # username: elastic
+      # password: your-es-password
+      # 连接超时时间
+      connection-timeout: 10s
+      # 读取超时时间
+      read-timeout: 30s
+      # 是否使用SSL
+      ssl:  false
+
+
+# 日志打印（方便调试）
+logging:
+  level:
+    org.springframework.data.elasticsearch: debug
